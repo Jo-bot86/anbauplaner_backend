@@ -1,0 +1,29 @@
+spring:
+  profiles:
+    active: docker
+  datasource:
+    url: ${SPRING_DATASOURCE_URL:jdbc:postgresql://localhost:5433/anbauplaner}
+    username: ${SPRING_DATASOURCE_USERNAME:user}
+    password: ${SPRING_DATASOURCE_PASSWORD:password}
+
+  jpa:
+    hibernate:
+      ddl-auto: ${SPRING_JPA_HIBERNATE_DDL_AUTO:update}
+    show-sql: true
+
+server:
+  port: 8080
+
+jwt:
+  secret: ${JWT_SECRET:default-fallback-secret}
+
+logging:
+  level:
+    root: INFO
+    org.springframework.web: DEBUG
+    org.springframework.boot.web.servlet: DEBUG
+    org.springframework.security.web.SecurityFilterChain: Debug
+    org.hibernate.SQL: DEBUG
+    de.nadu_ocholt.anbauplaner: DEBUG
+  file:
+    name: logs/anbauplaner.log

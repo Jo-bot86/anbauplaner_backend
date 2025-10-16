@@ -1,0 +1,14 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5433/anbauplaner
+    username: postgres
+    password: 1234
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+
+jwt:
+  secret: JTmhAJOK66onez2gASBKAX3ru6nR9s+GHU/Z/4oeX8APW1DGHg7aZS2WCG7sr5E/OdYfAt6/Vk/BBeYyAa1rdQ==
+  validity-ms: 3600000
