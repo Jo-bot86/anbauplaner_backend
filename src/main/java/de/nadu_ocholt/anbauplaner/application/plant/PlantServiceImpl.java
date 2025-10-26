@@ -40,10 +40,10 @@ public class PlantServiceImpl implements PlantService {
 
     @Override
     public PlantDTO createPlant(CreatePlantDTO plantDTO) {
-        log.info("Creating new plant: {}", plantDTO.getName());
+        log.info("Creating new plant: {}", plantDTO.name());
 
-        if (this.plantRepository.existsByName(plantDTO.getName())) {
-            throw new PlantAlreadyExistsException(plantDTO.getName());
+        if (this.plantRepository.existsByName(plantDTO.name())) {
+            throw new PlantAlreadyExistsException(plantDTO.name());
         }
 
         Plant entity = plantMapper.toEntity(plantDTO);
