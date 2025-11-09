@@ -1,13 +1,13 @@
 package de.nadu_ocholt.anbauplaner.domain.plant;
 
 import de.nadu_ocholt.anbauplaner.domain.event.Event;
-import de.nadu_ocholt.anbauplaner.domain.plant.converter.DurationToLongConverter;
+import de.nadu_ocholt.anbauplaner.domain.plant.converter.PeriodToLongConverter;
 import de.nadu_ocholt.anbauplaner.shared.persistence.BaseEntity;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
 import lombok.*;
 
-import java.time.Duration;
+import java.time.Period;
 import java.util.List;
 
 @Getter
@@ -35,8 +35,8 @@ public class Plant extends BaseEntity {
     @OneToMany(mappedBy = "plant", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Event> event;
 
-    @Convert(converter = DurationToLongConverter.class)
-    private Duration developmentDuration;
+    @Convert(converter = PeriodToLongConverter.class)
+    private Period developmentDuration;
 
     @Embedded
     @AttributeOverrides({

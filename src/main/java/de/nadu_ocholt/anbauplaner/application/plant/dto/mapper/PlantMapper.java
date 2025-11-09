@@ -9,8 +9,9 @@ import de.nadu_ocholt.anbauplaner.domain.plant.RangeCm;
 import de.nadu_ocholt.anbauplaner.domain.plant.Spacing;
 import org.mapstruct.Mapper;
 import org.mapstruct.MappingTarget;
+import org.mapstruct.NullValueCheckStrategy;
 
-@Mapper(componentModel = "spring")
+@Mapper(componentModel = "spring", nullValueCheckStrategy = NullValueCheckStrategy.ALWAYS)
 public interface PlantMapper {
     PlantDTO toDTO(Plant entity);
 

@@ -6,7 +6,6 @@ import de.nadu_ocholt.anbauplaner.application.plant.dto.UpdatePlantDTO;
 import de.nadu_ocholt.anbauplaner.application.plant.dto.mapper.PlantMapper;
 import de.nadu_ocholt.anbauplaner.domain.plant.Plant;
 import de.nadu_ocholt.anbauplaner.domain.plant.PlantRepository;
-import de.nadu_ocholt.anbauplaner.domain.plant.exception.PlantAlreadyExistsException;
 import de.nadu_ocholt.anbauplaner.domain.plant.exception.PlantNotFoundException;
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
@@ -41,10 +40,6 @@ public class PlantServiceImpl implements PlantService {
     @Override
     public PlantDTO createPlant(CreatePlantDTO plantDTO) {
         log.info("Creating new plant: {}", plantDTO.name());
-
-        if (this.plantRepository.existsByName(plantDTO.name())) {
-            throw new PlantAlreadyExistsException(plantDTO.name());
-        }
 
         Plant entity = plantMapper.toEntity(plantDTO);
         return plantMapper.toDTO(plantRepository.save(entity));
