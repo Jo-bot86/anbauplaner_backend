@@ -11,14 +11,15 @@ import java.io.Serializable;
 @Embeddable
 public class RangeCm implements Serializable {
 
-    private Integer min;
-    private Integer max;
+    private Double min;
+    private Double max;
 
     protected RangeCm() {
     }
 
-    public RangeCm(Integer min, Integer max) {
-        if (min == null || max == null) throw new IllegalArgumentException("min/max not null");
+    public RangeCm(Double min, Double max) {
+        if (min == null || max == null)
+            throw new IllegalArgumentException("min/max not null");
         if (min > max) throw new IllegalArgumentException("min <= max");
         this.min = min;
         this.max = max;
