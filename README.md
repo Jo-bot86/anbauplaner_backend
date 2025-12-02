@@ -4,7 +4,7 @@ Dieses Projekt stellt die Server-API zur Verfügung.
 Technologien:
 
 - Spring Boot 3
-- Java 21
+- Java 17
 - Spring Security
 - JWT Authentifizierung
 - PostgreSQL
