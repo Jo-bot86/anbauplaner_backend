@@ -16,7 +16,7 @@ Technologien:
 ## 🚀 Projekt starten (lokal)
 
 ### Voraussetzungen:
-- Java 17
+- Java 21
 - PostgreSQL lokal
 
 ```bash
