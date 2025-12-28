@@ -27,3 +27,4 @@ logging:
     de.nadu_ocholt.anbauplaner: DEBUG
   file:
     name: logs/anbauplaner.log
+

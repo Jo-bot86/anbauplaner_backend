@@ -68,7 +68,8 @@ public class SecurityConfig {
     public CorsConfigurationSource corsConfigurationSource() {
         CorsConfiguration configuration = new CorsConfiguration();
         configuration.setAllowedOrigins(List.of("https://turbo-grow.onrender.com",
-                "http://localhost:5173", "http://frontend:80"));
+                                                "http://localhost", "http" +
+                                                        "://localhost:5173", "http://frontend:80"));
         configuration.setAllowedMethods(List.of("GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"));
         configuration.setAllowedHeaders(List.of("*"));
 
